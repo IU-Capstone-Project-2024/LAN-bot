@@ -10,7 +10,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_start(msg: Message) -> None:
-    await rq.set_user(msg.from_user.id, msg.from_user.username, msg.from_user.first_name, msg.from_user.last_name)
+    await rq.set_user(msg.from_user.id, msg.from_user.username)
     await msg.answer('Hi', reply_markup=kb.start)
 
 
